@@ -12,6 +12,7 @@
         {% endblock %}
 
         {% block corecss %}
+            <link rel="stylesheet" href="{% static 'css/base.css' %}">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         {% endblock %}
 
@@ -30,7 +31,7 @@
         <title>Game Swappers {% block extra_title %} {% endblock %}</title>
     </head>
     <body>
-        <header class="container-fluid fixed-top">
+        <header class="container-fluid fixed-top fixed_top_css">
         <div class="row">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
@@ -90,6 +91,16 @@
                 </ul>
             </div>
         </div>
+        <div class="row  navbar_css">
+            <nav class="navbar navbar-expand-lg navbar-light w-100">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                {% include 'includes/main-nav.html' %}
+            </nav>
+        </div>
+    
     </header>
 
         {% if messages %}
